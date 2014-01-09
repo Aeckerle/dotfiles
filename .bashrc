@@ -105,3 +105,11 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+HISTSIZE=5000
+HISTFILESIZE=25500
+HISTIGNORE="&:ls:[bf]g:exit"
+HISTTIMEFORMAT="%F %T "
+PROMPT_COMMAND='history -a'
+HISTCONTROL=ignoredups:ignorespace
+# append to the history file, don't overwrite it
+shopt -s histappend
